@@ -74,9 +74,13 @@ sudo dnf install -y zsh
 sudo dnf install -y zsh-syntax-highlighting
 sudo dnf install -y libguestfs-tools 
 
-
+################################################################
+# Disable Wayland and install displaylink
 sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
 sudo sed -i '/WaylandEnable=false/ i DefaultSession=gnome-xorg.desktop' /etc/gdm/custom.conf
+wget -cO /tmp/displaylink.rpm https://github.com/displaylink-rpm/displaylink-rpm/releases/download/v5.2.14-3-rc1/fedora-31-displaylink-1.6.4-2.x86_64.rpm --read-timeout=5 --tries=0
+sudo dnf install -y /tmp/displaylink.rpm
+rm /tmp/displaylink.rpm
 
 ################################################################
 # JetBrains Toolbox
