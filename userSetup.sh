@@ -60,6 +60,11 @@ gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgr
 gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
 
 ####################################################
+# Launch Google Chrome to login and 
+# install extensions
+google-chrome
+
+####################################################
 # nvm Node Install
 sh -c "$(curl -sSL https://raw.githubusercontent.com/creationix/nvm/master/install.sh)"
 source /home/dbm/.bashrc
