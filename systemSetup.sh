@@ -193,7 +193,7 @@ chmod +x /home/dbm/.local/share/applications/jetbrains-webstorm.desktop
 # Stage User Setup Script for Post Reboot
 cat <<EOT >> /home/dbm/userSetup.sh
 #!/bin/bash
-sh -c \$(curl -sSL https://github.com/magicCashew/x/blob/master/userSetup.sh)
+sh -c \$(curl -sSL https://raw.githubusercontent.com/magicCashew/x/master/userSetup.sh)
 EOT
 chmod +x /home/dbm/userSetup.sh
 
