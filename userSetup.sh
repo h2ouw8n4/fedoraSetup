@@ -88,3 +88,7 @@ npm install --unsafe-perm -g gulp grunt grunt-cli uglify-js yarn
 mkdir /home/dbm/Applications
 curl https://www.navicat.com/download/direct-download?product=navicat15-premium-en.AppImage&location=1 --output /home/dbm/Applications/navicat15-premium-en.AppImage
 chmod +x /home/dbm/Applications/navicat15-premium-en.AppImage
+
+####################################################
+# Download Windows iso for VMWare Image
+curl https://www.dropbox.com/s/qk30usqkee8v6ek/Win10_1909_English_x64.iso?dl=0 --output /home/dbm/Downloads/win10_1909_x64.iso
