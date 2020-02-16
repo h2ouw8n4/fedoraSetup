@@ -134,7 +134,7 @@ sudo curl -L "https://download.jetbrains.com/product?code=WS&latest&distribution
 
 ################################################################
 # Stage User Setup Script for Post Reboot
-cat <<EOT >> /home/derekmu/userSetup.sh
+cat <<EOT >> /home/dbm/userSetup.sh
 #!/bin/bash
 sh -c \$(curl -sSL https://github.com/magicCashew/x/blob/master/userSetup.sh)
 EOT
