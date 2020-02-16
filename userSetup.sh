@@ -61,8 +61,11 @@ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backg
 
 ####################################################
 # Launch Google Chrome to login and 
-# install extensions
-google-chrome
+# install extensions and open windows iso download
+# page for use in vm
+google-chrome https://www.microsoft.com/software-download/windows10                                             # windows 10 Download
+google-chrome https://keep.google.com/#NOTE/15g-Aq2l_egHafwal04arJFeZt9MiW-a5HJlElnybCjEln4buvwQmkJiFvhKCS5Q    # Windows 10 Key
+google-chrome https://keep.google.com/#NOTE/1zMdfZMjavVv_w3TrzBMMZ-OdjhQ8PIayhJun5y06KY7LY0V0GfqrpTqOam3NWQ     # No thanks Key
 
 ####################################################
 # nvm Node Install
