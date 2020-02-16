@@ -80,7 +80,10 @@ sudo dnf install -y libguestfs-tools
 
 ####################################################
 # Install VMWare
-sh -c $(curl -sSL https://www.vmware.com/go/getworkstation-linux)
+wget -cO /tmp/getworkstation-linux.sh https://www.dropbox.com/s/jrthoy9s90dxr96/VMware-Workstation-Full-15.5.1-15018445.x86_64.bundle?dl=0
+chmod +x /tmp/getworkstation-linux.sh
+sudo /tmp/getworkstation-linux.sh
+rm /tmp/getworkstation-linux.sh
 
 ####################################################
 # Install Oracle Instant Client
@@ -123,21 +126,11 @@ sudo dnf install -y /tmp/displaylink.rpm
 rm /tmp/displaylink.rpm
 
 ################################################################
-# JetBrains Toolbox
-USER_AGENT=('User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36')
-URL=$(curl 'https://data.services.jetbrains.com//products/releases?code=TBA&latest=true&type=release' -H 'Origin: https://www.jetbrains.com' -H 'Accept-Encoding: gzip, deflate, br' -H 'Accept-Language: en-US,en;q=0.8' -H "${USER_AGENT[@]}" -H 'Accept: application/json, text/javascript, */*; q=0.01' -H 'Referer: https://www.jetbrains.com/toolbox/download/' -H 'Connection: keep-alive' -H 'DNT: 1' --compressed | grep -Po '"linux":.*?[^\\]",' | awk -F ':' '{print $3,":"$4}'| sed 's/[", ]//g')
-sudo wget -cO  /tmp/$(basename ${URL}) ${URL} --read-timeout=5 --tries=0
-sudo mkdir /opt/jetbrains-toolbox
-sudo tar -xzf /tmp/$(basename ${URL}) -C /opt/jetbrains-toolbox --strip-components=1
-cat <<EOT >> /tmp/jetbrains-toolbox.sh
-#!/bin/bash
-/opt/jetbrains-toolbox/jetbrains-toolbox
-EOT
-sudo mv /tmp/jetbrains-toolbox.sh /opt/jetbrains-toolbox/jetbrains-toolbox.sh
-sudo chmod -R +rwx /opt/jetbrains-toolbox
-sudo ln -s /opt/jetbrains-toolbox/jetbrains-toolbox.sh /usr/local/bin/jetbrains-toolbox
-sudo chmod -R +rwx /usr/local/bin/jetbrains-toolbox
-rm /tmp/$(basename ${URL})
+# JetBrains
+sudo curl -L "https://download.jetbrains.com/product?code=PS&latest&distribution=linux" | sudo tar xvz -C /opt/phpstorm --strip 1
+sudo curl -L "https://download.jetbrains.com/product?code=PC&latest&distribution=linux" | sudo tar xvz -C /opt/pycharm --strip 1
+sudo curl -L "https://download.jetbrains.com/product?code=DG&latest&distribution=linux" | sudo tar xvz -C /opt/datagrip --strip 1
+sudo curl -L "https://download.jetbrains.com/product?code=WS&latest&distribution=linux" | sudo tar xvz -C /opt/webstorm --strip 1
 
 ################################################################
 # Stage User Setup Script for Post Reboot
