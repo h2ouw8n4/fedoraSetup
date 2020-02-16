@@ -104,6 +104,12 @@ wget -cO /tmp/oracle-instantclient11.2-tools.rpm https://www.dropbox.com/s/5zotp
 sudo dnf install -y /tmp/oracle-instantclient11.2-tools.rpm
 rm /tmp/oracle-instantclient11.2-tools.rpm
 
+cd /usr/lib/oracle/11.2/client64/bin
+sudo ln -s libclntsh.so.11.1 libclntsh.so
+sudo ln -s libocci.so.11.1 libocci.so
+sudo sh -c "echo /usr/lib/oracle/11.2/client64/bin > /etc/ld.so.conf.d/oracle-instantclient.conf"
+sudo ldconfig
+
 ################################################################
 # Disable Wayland and Install Displaylink
 sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
