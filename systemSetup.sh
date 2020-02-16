@@ -79,23 +79,8 @@ sudo dnf install -y zsh-syntax-highlighting
 sudo dnf install -y libguestfs-tools 
 
 ####################################################
-# Add Virtualbox Repo and Install
-sudo wget -cO /etc/yum.repos.d/virtualbox.repo http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo --read-timeout=5 --tries=0
-sudo dnf install -y binutils
-sudo dnf install -y gcc
-sudo dnf install -y make
-sudo dnf install -y patch
-sudo dnf install -y libgomp
-sudo dnf install -y glibc-headers
-sudo dnf install -y glibc-devel
-sudo dnf install -y kernel-headers
-sudo dnf install -y kernel-devel
-sudo dnf install -y dkms
-sudo dnf install -y qt5-qtx11extras
-sudo dnf install -y libxkbcommon
-sudo dnf install -y VirtualBox-6.1
-sudo /usr/lib/virtualbox/vboxdrv.sh setup
-sudo usermod -a -G vboxusers dbm
+# Install VMWare
+sh -c $(curl -sSL https://www.vmware.com/go/getworkstation-linux)
 
 ####################################################
 # Install Oracle Instant Client
@@ -156,9 +141,9 @@ rm /tmp/$(basename ${URL})
 
 ################################################################
 # Stage User Setup Script for Post Reboot
-cat <<EOT >> /home/dbm/userSetup.sh
+cat <<EOT >> /home/derekmu/userSetup.sh
 #!/bin/bash
-sh -c curl -sSL https://github.com/magicCashew/x/blob/master/userSetup.sh
+sh -c \$(curl -sSL https://github.com/magicCashew/x/blob/master/userSetup.sh)
 EOT
 chmod +x /home/dbm/userSetup.sh
 
