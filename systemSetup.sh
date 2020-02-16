@@ -127,10 +127,25 @@ rm /tmp/displaylink.rpm
 
 ################################################################
 # JetBrains
-sudo curl -L "https://download.jetbrains.com/product?code=PS&latest&distribution=linux" | sudo tar xvz -C /opt/phpstorm --strip 1
-sudo curl -L "https://download.jetbrains.com/product?code=PC&latest&distribution=linux" | sudo tar xvz -C /opt/pycharm --strip 1
-sudo curl -L "https://download.jetbrains.com/product?code=DG&latest&distribution=linux" | sudo tar xvz -C /opt/datagrip --strip 1
-sudo curl -L "https://download.jetbrains.com/product?code=WS&latest&distribution=linux" | sudo tar xvz -C /opt/webstorm --strip 1
+wget 'https://download.jetbrains.com/product?code=PS&latest&distribution=linux' | sudo tar xvz -C /opt/phpstorm --strip 1
+wget 'https://download.jetbrains.com/product?code=PC&latest&distribution=linux' | sudo tar xvz -C /opt/pycharm --strip 1
+wget 'https://download.jetbrains.com/product?code=DG&latest&distribution=linux' | sudo tar xvz -C /opt/datagrip --strip 1
+wget 'https://download.jetbrains.com/product?code=WS&latest&distribution=linux' | sudo tar xvz -C /opt/webstorm --strip 1
+
+cat <<EOT >> /home/dbm/.local/share/applications/jetbrains-webstorm.desktop
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=WebStorm
+Icon=/opt/webstorm/bin/webstorm.svg
+Exec="/opt/webstorm/bin/webstorm.sh" %f
+Comment=The smartest JavaScript IDE
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-webstorm
+EOT
+chmod +x /home/dbm/.local/share/applications/jetbrains-webstorm.desktop
+
 
 ################################################################
 # Stage User Setup Script for Post Reboot
