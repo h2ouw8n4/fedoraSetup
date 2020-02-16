@@ -59,20 +59,14 @@ gsettings set org.gnome.nautilus.list-view use-tree-view true
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
 gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
 
-
-####################################################
-# Launch Jetbrains Toolbox
-/opt/jetbrains-toolbox/jetbrains-toolbox --minimize
-
 ####################################################
 # Launch Google Chrome to login, wait 30 seconds,
 # install extensions, then open windows iso download
 # page for use in vm, and other related pages
-google-chrome https://accounts.google.com/signin/v2/identifier
+google-chrome https://accounts.google.com/signin/v2/identifier > /dev/null 2>&1 &
 sleep 30
-google-chrome https://www.microsoft.com/software-download/windows10                                             # windows 10 Download
-google-chrome https://keep.google.com/#NOTE/15g-Aq2l_egHafwal04arJFeZt9MiW-a5HJlElnybCjEln4buvwQmkJiFvhKCS5Q    # Windows 10 Key
-google-chrome https://keep.google.com/#NOTE/1zMdfZMjavVv_w3TrzBMMZ-OdjhQ8PIayhJun5y06KY7LY0V0GfqrpTqOam3NWQ     # No thanks Key
+google-chrome https://keep.google.com/#NOTE/15g-Aq2l_egHafwal04arJFeZt9MiW-a5HJlElnybCjEln4buvwQmkJiFvhKCS5Q    # Windows 10 Key > /dev/null 2>&1 &
+google-chrome https://keep.google.com/#NOTE/1zMdfZMjavVv_w3TrzBMMZ-OdjhQ8PIayhJun5y06KY7LY0V0GfqrpTqOam3NWQ     # No thanks Key > /dev/null 2>&1 &
 
 ####################################################
 # nvm Node Install
@@ -86,9 +80,14 @@ npm install --unsafe-perm -g gulp grunt grunt-cli uglify-js yarn
 ####################################################
 # Install Navicat
 mkdir /home/dbm/Applications
-curl https://www.navicat.com/download/direct-download?product=navicat15-premium-en.AppImage&location=1 --output /home/dbm/Applications/navicat15-premium-en.AppImage
+wget -cO /home/dbm/Applications/navicat15-premium-en.AppImage https://www.dropbox.com/s/7zb05n0lkjdlwax/navicat15-premium-en.AppImage?dl=0
 chmod +x /home/dbm/Applications/navicat15-premium-en.AppImage
+/home/dbm/Applications/navicat15-premium-en.AppImage > /dev/null 2>&1 &
+
+####################################################
+# Launch VMWare to Initialize
+vmware > /dev/null 2>&1 &
 
 ####################################################
 # Download Windows iso for VMWare Image
-curl https://www.dropbox.com/s/qk30usqkee8v6ek/Win10_1909_English_x64.iso?dl=0 --output /home/dbm/Downloads/win10_1909_x64.iso
+wget -cO /home/dbm/Downloads/win10.iso https://www.dropbox.com/s/qk30usqkee8v6ek/Win10_1909_English_x64.iso?dl=0
