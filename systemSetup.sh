@@ -78,6 +78,32 @@ sudo dnf install -y zsh
 sudo dnf install -y zsh-syntax-highlighting
 sudo dnf install -y libguestfs-tools 
 
+####################################################
+# Install Oracle Instant Client
+wget -cO /tmp/oracle-instantclient11.2-basic.rpm https://www.dropbox.com/s/ufpemzxazrpaprr/oracle-instantclient11.2-basic-11.2.0.4.0-1.x86_64.rpm?dl=0 --read-timeout=5 --tries=0
+sudo dnf install -y /tmp/oracle-instantclient11.2-basic.rpm
+rm /tmp/oracle-instantclient11.2-basic.rpm
+
+wget -cO /tmp/oracle-instantclient11.2-dev.rpm https://www.dropbox.com/s/82kert11uddeone/oracle-instantclient11.2-devel-11.2.0.4.0-1.x86_64.rpm?dl=0 --read-timeout=5 --tries=0
+sudo dnf install -y /tmp/oracle-instantclient11.2-dev.rpm
+rm /tmp/oracle-instantclient11.2-dev.rpm
+
+wget -cO /tmp/oracle-instantclient11.2-jdbc.rpm https://www.dropbox.com/s/mnjwv5rhi18atq5/oracle-instantclient11.2-jdbc-11.2.0.4.0-1.x86_64.rpm?dl=0 --read-timeout=5 --tries=0
+sudo dnf install -y /tmp/oracle-instantclient11.2-jdbc.rpm
+rm /tmp/oracle-instantclient11.2-jdbc.rpm
+
+wget -cO /tmp/oracle-instantclient11.2-odbc.rpm https://www.dropbox.com/s/kacxgu2641v9imh/oracle-instantclient11.2-odbc-11.2.0.4.0-1.x86_64.rpm?dl=0 --read-timeout=5 --tries=0
+sudo dnf install -y /tmp/oracle-instantclient11.2-odbc.rpm
+rm /tmp/oracle-instantclient11.2-odbc.rpm
+
+wget -cO /tmp/oracle-instantclient11.2-sqlplus.rpm https://www.dropbox.com/s/cpriv7h7tyd1ovz/oracle-instantclient11.2-sqlplus-11.2.0.4.0-1.x86_64.rpm?dl=0 --read-timeout=5 --tries=0
+sudo dnf install -y /tmp/oracle-instantclient11.2-sqlplus.rpm
+rm /tmp/oracle-instantclient11.2-sqlplus.rpm
+
+wget -cO /tmp/oracle-instantclient11.2-tools.rpm https://www.dropbox.com/s/5zotpejjo3u4dur/oracle-instantclient11.2-tools-11.2.0.4.0-1.x86_64.rpm?dl=0 --read-timeout=5 --tries=0
+sudo dnf install -y /tmp/oracle-instantclient11.2-tools.rpm
+rm /tmp/oracle-instantclient11.2-tools.rpm
+
 ################################################################
 # Disable Wayland and Install Displaylink
 sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
