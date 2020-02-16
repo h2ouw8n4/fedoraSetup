@@ -101,7 +101,7 @@ rm /tmp/$(basename ${URL})
 
 cat <<EOT >> /home/dbm/installStep2.sh
 #!/bin/bash
-sh -c "$(curl -sSL https://raw.githubusercontent.com/magicCashew/x/master/setup2.sh)"
+sh -c "$(curl -sSL https://github.com/magicCashew/x/blob/master/userSetup.sh)"
 EOT
 chmod +r /home/dbm/installStep2.sh
 
