@@ -59,6 +59,11 @@ gsettings set org.gnome.nautilus.list-view use-tree-view true
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
 gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
 
+
+####################################################
+# Launch Jetbrains Toolbox
+/opt/jetbrains-toolbox/jetbrains-toolbox --minimize
+
 ####################################################
 # Launch Google Chrome to login, wait 30 seconds,
 # install extensions, then open windows iso download
