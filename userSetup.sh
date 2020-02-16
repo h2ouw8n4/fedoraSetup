@@ -83,6 +83,8 @@ nvm install --lts --latest-npm
 # Install global npm requirements
 npm install --unsafe-perm -g gulp grunt grunt-cli uglify-js yarn
 
+####################################################
+# Install Navicat
 mkdir /home/dbm/Applications
 curl https://www.navicat.com/download/direct-download?product=navicat15-premium-en.AppImage&location=1 --output /home/dbm/Applications/navicat15-premium-en.AppImage
 chmod +x /home/dbm/Applications/navicat15-premium-en.AppImage
