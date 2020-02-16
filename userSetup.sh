@@ -60,9 +60,11 @@ gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgr
 gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
 
 ####################################################
-# Launch Google Chrome to login and 
-# install extensions and open windows iso download
-# page for use in vm
+# Launch Google Chrome to login, wait 30 seconds,
+# install extensions, then open windows iso download
+# page for use in vm, and other related pages
+google-chrome https://accounts.google.com/signin/v2/identifier
+sleep 30
 google-chrome https://www.microsoft.com/software-download/windows10                                             # windows 10 Download
 google-chrome https://keep.google.com/#NOTE/15g-Aq2l_egHafwal04arJFeZt9MiW-a5HJlElnybCjEln4buvwQmkJiFvhKCS5Q    # Windows 10 Key
 google-chrome https://keep.google.com/#NOTE/1zMdfZMjavVv_w3TrzBMMZ-OdjhQ8PIayhJun5y06KY7LY0V0GfqrpTqOam3NWQ     # No thanks Key
