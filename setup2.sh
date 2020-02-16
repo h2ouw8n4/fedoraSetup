@@ -96,3 +96,5 @@ mkdir /home/dbm/Applications
 curl https://www.navicat.com/download/direct-download?product=navicat15-premium-en.AppImage&location=1 --output /home/dbm/Applications/navicat15-premium-en.AppImage
 chmod +x navicat15-premium-en.AppImage
 
+#The user needs to reboot to apply all changes.
+sudo reboot now
