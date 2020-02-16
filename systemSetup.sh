@@ -11,6 +11,7 @@ sudo dnf remove -y gnome-boxes
 sudo dnf remove -y firefox
 sudo dnf remove -y rhythmbox
 sudo dnf remove -y gnome-maps
+sudo dnf remove -y gnome-terminal
 
 ###################################################
 # Add some necessary repos
@@ -67,7 +68,6 @@ sudo dnf install -y openssh-askpass
 sudo dnf install -y papirus-icon-theme
 sudo dnf install -y tilix
 sudo dnf install -y tilix-nautilus
-sudo dnf install -y virt-manager
 sudo dnf install -y wavemon
 sudo dnf install -y adobe-source-code-pro-fonts
 sudo dnf install -y iotop
@@ -77,6 +77,25 @@ sudo dnf install -y nload
 sudo dnf install -y zsh
 sudo dnf install -y zsh-syntax-highlighting
 sudo dnf install -y libguestfs-tools 
+
+####################################################
+# Add Virtualbox Repo and Install
+sudo wget -cO /etc/yum.repos.d/virtualbox.repo http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo --read-timeout=5 --tries=0
+sudo dnf install -y binutils
+sudo dnf install -y gcc
+sudo dnf install -y make
+sudo dnf install -y patch
+sudo dnf install -y libgomp
+sudo dnf install -y glibc-headers
+sudo dnf install -y glibc-devel
+sudo dnf install -y kernel-headers
+sudo dnf install -y kernel-devel
+sudo dnf install -y dkms
+sudo dnf install -y qt5-qtx11extras
+sudo dnf install -y libxkbcommon
+sudo dnf install -y VirtualBox-6.1
+sudo /usr/lib/virtualbox/vboxdrv.sh setup
+sudo usermod -a -G vboxusers dbm
 
 ####################################################
 # Install Oracle Instant Client
