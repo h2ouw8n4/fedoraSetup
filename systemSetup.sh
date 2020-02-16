@@ -99,11 +99,11 @@ sudo ln -s /opt/jetbrains-toolbox/jetbrains-toolbox.sh /usr/local/bin/jetbrains-
 sudo chmod -R +rwx /usr/local/bin/jetbrains-toolbox
 rm /tmp/$(basename ${URL})
 
-cat <<EOT >> /home/dbm/installStep2.sh
+cat <<EOT >> /home/dbm/userSetup.sh
 #!/bin/bash
 sh -c curl -sSL https://github.com/magicCashew/x/blob/master/userSetup.sh
 EOT
-chmod +r /home/dbm/installStep2.sh
+chmod +x /home/dbm/userSetup.sh
 
 #The user needs to reboot to apply all changes.
 sudo reboot now
