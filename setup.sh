@@ -1,5 +1,22 @@
 #!/bin/bash
 
+###################################################
+# Remove some un-needed stuff
+sudo dnf remove -y gnome-shell-extension-background-logo
+sudo dnf remove -y totem
+sudo dnf remove -y cheese
+sudo dnf remove -y chromium
+sudo dnf remove -y flowblade
+sudo dnf remove -y gnome-boxes
+sudo dnf remove -y firefox
+sudo dnf remove -y rhythmbox
+sudo dnf remove -y gnome-maps
+
+###################################################
+# Add some necessary repos
+sudo dnf install fedora-workstation-repositories -y
+sudo dnf config-manager --set-enabled google-chrome -y
+
 sudo dnf upgrade -y
 
 sudo dnf install -y arc-theme 
@@ -57,15 +74,6 @@ sudo dnf install -y zsh
 sudo dnf install -y zsh-syntax-highlighting
 sudo dnf install -y libguestfs-tools 
 
-###################################################
-# Remove some un-needed stuff
-sudo dnf remove -y gnome-shell-extension-background-logo
-sudo dnf remove -y totem
-sudo dnf remove -y cheese
-sudo dnf remove -y chromium
-sudo dnf remove -y flowblade
-sudo dnf remove -y gnome-boxes
-sudo dnf remove -y firefox
 
 sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
 sudo sed -i '/WaylandEnable=false/ i DefaultSession=gnome-xorg.desktop' /etc/gdm/custom.conf
