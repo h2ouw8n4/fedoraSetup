@@ -17,8 +17,12 @@ sudo dnf remove -y gnome-maps
 sudo dnf install fedora-workstation-repositories -y
 sudo dnf config-manager --set-enabled google-chrome -y
 
+###################################################
+# Process Upgrade of existing packages
 sudo dnf upgrade -y
 
+###################################################
+# Add Desired Packages
 sudo dnf install -y arc-theme 
 sudo dnf install -y breeze-cursor-theme 
 sudo dnf install -y google-chrome-stable 
@@ -75,7 +79,7 @@ sudo dnf install -y zsh-syntax-highlighting
 sudo dnf install -y libguestfs-tools 
 
 ################################################################
-# Disable Wayland and install displaylink
+# Disable Wayland and Install Displaylink
 sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
 sudo sed -i '/WaylandEnable=false/ i DefaultSession=gnome-xorg.desktop' /etc/gdm/custom.conf
 wget -cO /tmp/displaylink.rpm https://github.com/displaylink-rpm/displaylink-rpm/releases/download/v5.2.14-3-rc1/fedora-31-displaylink-1.6.4-2.x86_64.rpm --read-timeout=5 --tries=0
@@ -99,11 +103,14 @@ sudo ln -s /opt/jetbrains-toolbox/jetbrains-toolbox.sh /usr/local/bin/jetbrains-
 sudo chmod -R +rwx /usr/local/bin/jetbrains-toolbox
 rm /tmp/$(basename ${URL})
 
+################################################################
+# Stage User Setup Script for Post Reboot
 cat <<EOT >> /home/dbm/userSetup.sh
 #!/bin/bash
 sh -c curl -sSL https://github.com/magicCashew/x/blob/master/userSetup.sh
 EOT
 chmod +x /home/dbm/userSetup.sh
 
-#The user needs to reboot to apply all changes.
+################################################################
+# Reboot system to proceed with the user setup
 sudo reboot now
