@@ -16,8 +16,6 @@ sudo dnf remove -y gnome-terminal
 # Add some necessary repos
 sudo dnf install fedora-workstation-repositories -y
 sudo dnf config-manager --set-enabled google-chrome -y
-sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
-sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 ###################################################
 # Process Upgrade of existing packages
@@ -25,40 +23,7 @@ sudo dnf upgrade -y
 
 ###################################################
 # Add Desired Packages
-sudo dnf install -y arc-theme
-sudo dnf install -y brave-browser
-sudo dnf install -y breeze-cursor-theme 
-sudo dnf install -y chrome-gnome-shell 
-sudo dnf install -y exfat-utils
-sudo dnf install -y ffmpeg 
-sudo dnf install -y file-roller-nautilus 
-sudo dnf install -y fuse-exfat 
-sudo dnf install -y fuse-sshfs 
-sudo dnf install -y git 
-sudo dnf install -y gnome-shell-extension-dash-to-dock
-sudo dnf install -y gnome-shell-extension-topicons-plus
-sudo dnf install -y gnome-shell-extension-user-theme
-sudo dnf install -y gvfs-fuse
-sudo dnf install -y gvfs-mtp
-sudo dnf install -y gvfs-nfs
-sudo dnf install -y gvfs-smb
-sudo dnf install -y nautilus-extensions
-sudo dnf install -y nautilus-image-converter
-sudo dnf install -y nautilus-search-tool
-sudo dnf install -y onedrive
-sudo dnf install -y openssh-askpass
-sudo dnf install -y papirus-icon-theme
-sudo dnf install -y tilix
-sudo dnf install -y tilix-nautilus
-sudo dnf install -y wavemon
-sudo dnf install -y adobe-source-code-pro-fonts
-sudo dnf install -y iotop
-sudo dnf install -y nano
-sudo dnf install -y nethogs
-sudo dnf install -y nload
-sudo dnf install -y zsh
-sudo dnf install -y zsh-syntax-highlighting
-sudo dnf install -y libguestfs-tools 
+sudo dnf install -y arc-theme breeze-cursor-theme google-chrome-stable chrome-gnome-shell file-roller-nautilus fuse-sshfs git gnome-shell-extension-dash-to-dock gnome-shell-extension-topicons-plus gnome-shell-extension-user-theme gvfs-fuse gvfs-mtp gvfs-nfs gvfs-smb nautilus-extensions nautilus-image-converter nautilus-search-tool onedrive openssh-askpass papirus-icon-theme tilix tilix-nautilus wavemon adobe-source-code-pro-fonts iotop nano nethogs nload zsh zsh-syntax-highlighting libguestfs-tools
 
 ####################################################
 # Install Oracle Instant Client
