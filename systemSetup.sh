@@ -7,7 +7,6 @@ sudo dnf remove -y totem
 sudo dnf remove -y cheese
 sudo dnf remove -y chromium
 sudo dnf remove -y flowblade
-sudo dnf remove -y gnome-boxes
 sudo dnf remove -y firefox
 sudo dnf remove -y rhythmbox
 sudo dnf remove -y gnome-maps
@@ -17,6 +16,8 @@ sudo dnf remove -y gnome-terminal
 # Add some necessary repos
 sudo dnf install fedora-workstation-repositories -y
 sudo dnf config-manager --set-enabled google-chrome -y
+sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
+sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 ###################################################
 # Process Upgrade of existing packages
@@ -24,9 +25,9 @@ sudo dnf upgrade -y
 
 ###################################################
 # Add Desired Packages
-sudo dnf install -y arc-theme 
+sudo dnf install -y arc-theme
+sudo dnf install -y brave-browser
 sudo dnf install -y breeze-cursor-theme 
-sudo dnf install -y google-chrome-stable 
 sudo dnf install -y chrome-gnome-shell 
 sudo dnf install -y exfat-utils
 sudo dnf install -y ffmpeg 
@@ -64,6 +65,7 @@ sudo dnf install -y keepassxc
 sudo dnf install -y nautilus-extensions
 sudo dnf install -y nautilus-image-converter
 sudo dnf install -y nautilus-search-tool
+sudo dnf install -y onedrive
 sudo dnf install -y openssh-askpass
 sudo dnf install -y papirus-icon-theme
 sudo dnf install -y tilix
@@ -77,13 +79,6 @@ sudo dnf install -y nload
 sudo dnf install -y zsh
 sudo dnf install -y zsh-syntax-highlighting
 sudo dnf install -y libguestfs-tools 
-
-####################################################
-# Install VMWare
-wget -cO /tmp/getworkstation-linux.sh https://www.dropbox.com/s/jrthoy9s90dxr96/VMware-Workstation-Full-15.5.1-15018445.x86_64.bundle?dl=0
-chmod +x /tmp/getworkstation-linux.sh
-sudo /tmp/getworkstation-linux.sh
-rm /tmp/getworkstation-linux.sh
 
 ####################################################
 # Install Oracle Instant Client
