@@ -1,0 +1,10 @@
+rm -rf /home/dbm/Documents && ln -s /home/dbm/Dropbox/Documents /home/dbm/Documents
+rm -rf /home/dbm/Desktop && ln -s /home/dbm/Dropbox/Desktop /home/dbm/Desktop
+rm -rf /home/dbm/Music && ln -s /home/dbm/Dropbox/Music /home/dbm/Music
+rm -rf /home/dbm/Pictures && ln -s /home/dbm/Dropbox/Pictures /home/dbm/Pictures
+rm -rf /home/dbm/Videos && ln -s /home/dbm/Dropbox/Videos /home/dbm/Videos
+rm -rf /home/dbm/Templates && ln -s /home/dbm/Dropbox/Templates /home/dbm/Templates
+ln -s /home/dbm/Dropbox/Projects /home/dbm/Projects
+ln -s /home/dbm/Dropbox/Citrix /home/dbm/Citrix
+ln -s /home/dbm/Dropbox/Data /home/dbm/Data
+ln -s /home/dbm/Dropbox/bin /home/dbm/bin
