@@ -63,10 +63,10 @@ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backg
 # Launch Google Chrome to login, wait 30 seconds,
 # install extensions, then open windows iso download
 # page for use in vm, and other related pages
-google-chrome https://accounts.google.com/signin/v2/identifier > /dev/null 2>&1 &
-sleep 30
-google-chrome https://keep.google.com/#NOTE/15g-Aq2l_egHafwal04arJFeZt9MiW-a5HJlElnybCjEln4buvwQmkJiFvhKCS5Q    # Windows 10 Key > /dev/null 2>&1 &
-google-chrome https://keep.google.com/#NOTE/1zMdfZMjavVv_w3TrzBMMZ-OdjhQ8PIayhJun5y06KY7LY0V0GfqrpTqOam3NWQ     # No thanks Key > /dev/null 2>&1 &
+# google-chrome https://accounts.google.com/signin/v2/identifier > /dev/null 2>&1 &
+# sleep 30
+# google-chrome https://keep.google.com/#NOTE/15g-Aq2l_egHafwal04arJFeZt9MiW-a5HJlElnybCjEln4buvwQmkJiFvhKCS5Q    # Windows 10 Key > /dev/null 2>&1 &
+# google-chrome https://keep.google.com/#NOTE/1zMdfZMjavVv_w3TrzBMMZ-OdjhQ8PIayhJun5y06KY7LY0V0GfqrpTqOam3NWQ     # No thanks Key > /dev/null 2>&1 &
 
 ####################################################
 # nvm Node Install
@@ -79,14 +79,14 @@ npm install --unsafe-perm -g gulp grunt grunt-cli uglify-js yarn
 
 ####################################################
 # Install Navicat
-mkdir /home/dbm/Applications
-wget -cO /home/dbm/Applications/navicat15-premium-en.AppImage https://www.dropbox.com/s/7zb05n0lkjdlwax/navicat15-premium-en.AppImage?dl=0
-chmod +x /home/dbm/Applications/navicat15-premium-en.AppImage
-/home/dbm/Applications/navicat15-premium-en.AppImage > /dev/null 2>&1 &
+# mkdir /home/dbm/Applications
+# wget -cO /home/dbm/Applications/navicat15-premium-en.AppImage https://www.dropbox.com/s/7zb05n0lkjdlwax/navicat15-premium-en.AppImage?dl=0
+# chmod +x /home/dbm/Applications/navicat15-premium-en.AppImage
+# /home/dbm/Applications/navicat15-premium-en.AppImage > /dev/null 2>&1 &
 
 ####################################################
 # Launch VMWare to Initialize
-vmware > /dev/null 2>&1 &
+# vmware > /dev/null 2>&1 &
 
 ####################################################
 # Download Windows iso for VMWare Image
