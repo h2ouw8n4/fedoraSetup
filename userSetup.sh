@@ -79,4 +79,4 @@ npm install --unsafe-perm -g gulp grunt grunt-cli uglify-js yarn
 
 ####################################################
 # Download Windows iso for VMWare Image
-wget -cO /home/dbm/.local/share/gnome-boxes/win10.qcow2 https://www.dropbox.com/s/qk30usqkee8v6ek/Win10_1909_English_x64.iso?dl=0
+wget -cO /home/dbm/.local/share/gnome-boxes/win10.qcow2 https://www.dropbox.com/s/qt9pk5mj016xrkq/win10.qcow2?dl=0
