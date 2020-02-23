@@ -78,16 +78,5 @@ nvm install --lts --latest-npm
 npm install --unsafe-perm -g gulp grunt grunt-cli uglify-js yarn
 
 ####################################################
-# Install Navicat
-# mkdir /home/dbm/Applications
-# wget -cO /home/dbm/Applications/navicat15-premium-en.AppImage https://www.dropbox.com/s/7zb05n0lkjdlwax/navicat15-premium-en.AppImage?dl=0
-# chmod +x /home/dbm/Applications/navicat15-premium-en.AppImage
-# /home/dbm/Applications/navicat15-premium-en.AppImage > /dev/null 2>&1 &
-
-####################################################
-# Launch VMWare to Initialize
-# vmware > /dev/null 2>&1 &
-
-####################################################
 # Download Windows iso for VMWare Image
-wget -cO /home/dbm/Downloads/win10.iso https://www.dropbox.com/s/qk30usqkee8v6ek/Win10_1909_English_x64.iso?dl=0
+wget -cO /home/dbm/.local/share/gnome-boxes/win10.qcow2 https://www.dropbox.com/s/qk30usqkee8v6ek/Win10_1909_English_x64.iso?dl=0
