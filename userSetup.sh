@@ -84,3 +84,5 @@ wget -cO /home/dbm/.local/share/gnome-boxes/win10.qcow2 https://www.dropbox.com/
 ####################################################
 # Install Oh My zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+chsh -s $(which zsh)
+
