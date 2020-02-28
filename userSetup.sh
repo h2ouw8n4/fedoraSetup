@@ -78,5 +78,9 @@ nvm install --lts --latest-npm
 npm install --unsafe-perm -g gulp grunt grunt-cli uglify-js yarn
 
 ####################################################
-# Download Windows iso for VMWare Image
+# Download Windows Image
 wget -cO /home/dbm/.local/share/gnome-boxes/win10.qcow2 https://www.dropbox.com/s/qt9pk5mj016xrkq/win10.qcow2?dl=0
+
+####################################################
+# Install Oh My zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
