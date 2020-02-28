@@ -2,15 +2,7 @@
 
 ###################################################
 # Remove some un-needed stuff
-sudo dnf remove -y gnome-shell-extension-background-logo
-sudo dnf remove -y totem
-sudo dnf remove -y cheese
-sudo dnf remove -y chromium
-sudo dnf remove -y flowblade
-sudo dnf remove -y firefox
-sudo dnf remove -y rhythmbox
-sudo dnf remove -y gnome-maps
-sudo dnf remove -y gnome-terminal
+sudo dnf remove -y gnome-shell-extension-background-logo totem cheese chromium flowblade firefox rhythmbox gnome-maps gnome-terminal
 
 ###################################################
 # Add some necessary repos
@@ -23,7 +15,7 @@ sudo dnf upgrade -y
 
 ###################################################
 # Add Desired Packages
-sudo dnf install -y arc-theme breeze-cursor-theme google-chrome-stable chrome-gnome-shell file-roller-nautilus fuse-sshfs git gnome-shell-extension-dash-to-dock gnome-shell-extension-topicons-plus gnome-shell-extension-user-theme gvfs-fuse gvfs-mtp gvfs-nfs gvfs-smb nautilus-extensions nautilus-image-converter nautilus-search-tool onedrive openssh-askpass papirus-icon-theme tilix tilix-nautilus wavemon adobe-source-code-pro-fonts iotop nano nethogs nload zsh zsh-syntax-highlighting libguestfs-tools
+sudo dnf install -y arc-theme breeze-cursor-theme google-chrome-stable chrome-gnome-shell file-roller-nautilus fuse-sshfs git gnome-shell-extension-dash-to-dock gnome-shell-extension-topicons-plus gnome-shell-extension-user-theme gvfs-fuse gvfs-mtp gvfs-nfs gvfs-smb nautilus-extensions nautilus-image-converter nautilus-search-tool onedrive openssh-askpass papirus-icon-theme tilix tilix-nautilus wavemon adobe-source-code-pro-fonts iotop nano nethogs nload zsh zsh-syntax-highlighting libguestfs-tools util-linux-user
 
 ####################################################
 # Install Oracle Instant Client
